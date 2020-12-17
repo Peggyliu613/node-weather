@@ -72,7 +72,7 @@ app.get('/help/*', (req, res) => {
 })
 
 app.get('*', (req, res) => {
-    res.send("404 Page")
+    res.send("My 404 Page")
 })
 
 app.listen(3000, () => {
