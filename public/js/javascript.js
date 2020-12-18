@@ -5,7 +5,7 @@ const addressInput = document.querySelector('input')
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    fetch('http://localhost:3000/weather?address='+ encodeURIComponent(addressInput.value)).then((res) => {
+    fetch('/weather?address='+ encodeURIComponent(addressInput.value)).then((res) => {
         res.json().then((data) => {
             if (data.error) {
                 document.getElementById("weatherInfo1").innerHTML = data.error

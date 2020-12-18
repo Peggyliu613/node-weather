@@ -4,6 +4,7 @@ const path = require('path')
 const hbs = require('hbs')
 const forecast = require('./public/utils/forecast')
 const geo = require('./public/utils/geo')
+const port = process.env.PORT || 3000
 
 app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, '/public/templates'))
@@ -75,6 +76,6 @@ app.get('*', (req, res) => {
     res.send("My 404 Page")
 })
 
-app.listen(3000, () => {
-    console.log("server is up on port 3000")
+app.listen(port, () => {
+    console.log("server is up on port", port)
 })
