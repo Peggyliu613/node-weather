@@ -2,14 +2,14 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const hbs = require('hbs')
-const forecast = require('./utils/forecast')
-const geo = require('./utils/geo')
+const forecast = require('./public/utils/forecast')
+const geo = require('./public/utils/geo')
 
 app.set('view engine', 'hbs')
-app.set('views', path.join(__dirname, '/templates'))
+app.set('views', path.join(__dirname, '/public/templates'))
 app.use(express.static(__dirname))
 
-hbs.registerPartials(path.join(__dirname, '/templates'))
+hbs.registerPartials(path.join(__dirname, '/public//templates'))
 
 app.get('', (req, res) => {
     res.render('index', {
